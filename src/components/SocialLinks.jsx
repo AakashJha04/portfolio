@@ -13,7 +13,7 @@ const SocialLinks = () => {
             Github <FaGithub size={30}/>
             </> 
         ),
-        href:'https://github.com/AakashJha4797',
+        href:'',
         style: 'rounded-tr-md'
     },
     {
@@ -32,7 +32,7 @@ const SocialLinks = () => {
             Resume <BsFillPersonLinesFill size={30}/>
             </> 
         ),
-        href:'/resume.pdf',
+        href:'',
         style: 'rounded-br-md',
         download:true,
     },
