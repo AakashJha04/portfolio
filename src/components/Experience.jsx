@@ -21,35 +21,34 @@ import cypress from "../assets/cypress.png";
 import cpp from "../assets/c.png"; 
 import java from "../assets/java.png"; 
 
+const techs = [
+  { id: 1, title: "HTML", bg: html },
+  { id: 2, title: "CSS", bg: css },
+  { id: 3, title: "JavaScript", bg: js },
+  { id: 4, title: "React", bg: reactImg },
+  { id: 5, title: "Tailwind CSS", bg: tailwind },
+  { id: 6, title: "Node.js", bg: node },
+  { id: 7, title: "Python", bg: python },
+  { id: 8, title: "TypeScript", bg: typescript },
+  { id: 9, title: "Docker", bg: docker },
+  { id: 10, title: "AWS", bg: aws },
+  { id: 11, title: "GraphQL", bg: graphql },
+  { id: 12, title: "GitHub", bg: github },
+  { id: 13, title: "CI/CD", bg: cicd },
+  { id: 14, title: "Prisma", bg: prisma },
+  { id: 15, title: "MySQL", bg: mysql },
+  { id: 16, title: "PostgreSQL", bg: postgresql },
+  { id: 17, title: "MongoDB", bg: mongodb },
+  { id: 18, title: "Jest", bg: jest },
+  { id: 19, title: "Cypress", bg: cypress },
+  { id: 20, title: "C++", bg: cpp },
+  { id: 21, title: "Java", bg: java },
+];
 
 const Experience = () => {
-  const techs = [
-    { id: 1, src: html, title: "HTML", style: "shadow-orange-500" },
-    { id: 2, src: css, title: "CSS", style: "shadow-blue-500" },
-    { id: 3, src: js, title: "JavaScript", style: "shadow-yellow-500" },
-    { id: 4, src: reactImg, title: "React", style: "shadow-blue-500" },
-    { id: 5, src: tailwind, title: "Tailwind CSS", style: "shadow-sky-500" },
-    { id: 6, src: node, title: "Node.js", style: "shadow-green-500" },
-    { id: 7, src: python, title: "Python", style: "shadow-blue-300" },
-    { id: 8, src: typescript, title: "TypeScript", style: "shadow-blue-600" },
-    { id: 9, src: docker, title: "Docker", style: "shadow-blue-700" },
-    { id: 10, src: aws, title: "AWS", style: "shadow-orange-400" },
-    { id: 11, src: graphql, title: "GraphQL", style: "shadow-pink-500" },
-    { id: 12, src: github, title: "GitHub", style: "shadow-gray-500" },
-    { id: 13, src: cicd, title: "CI/CD", style: "shadow-gray-500" },
-    { id: 14, src: prisma, title: "Prisma", style: "shadow-blue-400" },
-    { id: 15, src: mysql, title: "MySQL", style: "shadow-blue-300" },
-    { id: 16, src: postgresql, title: "PostgreSQL", style: "shadow-blue-500" },
-    { id: 17, src: mongodb, title: "MongoDB", style: "shadow-green-400" },
-    { id: 18, src: jest, title: "Jest", style: "shadow-red-500" },
-    { id: 19, src: cypress, title: "Cypress", style: "shadow-green-500" },
-    { id: 20, src: cpp, title: "C++", style: "shadow-blue-600" },
-    { id: 21, src: java, title: "Java", style: "shadow-red-600" },
-  ];
-
   return (
     <div
-      name="experience"
+      name="Experience"
       className="bg-gradient-to-b from-gray-800 to-black w-full h-auto py-8"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full text-white">
@@ -57,18 +56,29 @@ const Experience = () => {
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
             Experience
           </p>
-          <p className="py-6">These are the technologies I have worked on:</p>
+          <p className="py-6">Technologies I have worked with:</p>
         </div>
 
         {/* Grid Layout */}
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center py-8 px-6 sm:px-0">
-          {techs.map(({ id, src, title, style }) => (
+        <div className="w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 text-center py-4 px-2 sm:px-0">
+          {techs.map(({ id, title, bg }) => (
             <div
               key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+              className="relative rounded-xl overflow-hidden group shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+              style={{
+                backgroundImage: `url(${bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "90px",   // smaller height
+              }}
             >
-              <img src={src} alt={`${title} logo`} className="w-20 mx-auto" />
-              <p className="mt-4">{title}</p>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-40 transition-opacity duration-300"></div>
+
+              {/* Title */}
+              <div className="relative flex justify-center items-center h-full">
+                <p className="text-white text-sm font-semibold">{title}</p> {/* Smaller text */}
+              </div>
             </div>
           ))}
         </div>

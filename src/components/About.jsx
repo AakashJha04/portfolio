@@ -13,15 +13,17 @@ const About = () => {
           </h2>
         </header>
         <p className="text-xl mt-10 leading-relaxed text-center md:text-left">
-          I am a passionate full-stack developer with expertise in building robust, scalable, and user-friendly web applications. My skills span across modern web technologies, including React, Node.js, Express, MongoDB, and more, enabling me to develop seamless and dynamic user experiences.
+          I am a passionate full-stack developer with expertise in building robust, scalable, and cloud-integrated web applications. My skills span across modern technologies like React, Node.js, Express, MongoDB, and cloud services such as AWS and Docker.
+
+          I specialize in designing scalable backend systems, integrating APIs, and automating workflows to optimize performance and efficiency. With a strong foundation in system design, data structures, and problem-solving, I ensure high-quality and maintainable solutions across projects.
+
+          Continuously learning and evolving, I enjoy taking on challenging problems and creating impactful software that makes a difference.
         </p>
         <br />
         <p className="text-xl leading-relaxed text-center md:text-left">
-          Beyond web development, I have a strong foundation in machine learning and artificial intelligence, allowing me to integrate intelligent systems into my applications. I have experience in designing predictive models, natural language processing (NLP) algorithms, and computer vision solutions using frameworks like TensorFlow and PyTorch.
         </p>
         <br />
         <p className="text-xl leading-relaxed text-center md:text-left">
-          My approach combines problem-solving skills with a deep understanding of system design, ensuring optimal performance and maintainability in every project. I am always eager to learn emerging technologies and take on challenging projects that push the boundaries of innovation.
         </p>
       </div>
     </div>

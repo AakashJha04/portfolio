@@ -10,3 +10,9 @@
         font-family: "Raleway", sans-serif;
     }
 }
+
+html, body {
+    background-color: black; /* Just to be safe */
+    overscroll-behavior: none;
+  }
+  
