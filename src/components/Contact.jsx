@@ -4,9 +4,7 @@ const Contact = () => {
   return (
     <div
       name="Contact"
-      className="w-full h-screen 
-        bg-gradient-to-br from-black via-gray-900 to-gray-800 p-6
-        text-white"
+      className="w-full h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark p-6 transition-colors duration-300"
     >
       <div className="flex flex-col p-6 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
@@ -18,7 +16,7 @@ const Contact = () => {
           >
             Contact
           </p>
-          <p className="py-6 text-gray-300 max-w-md">
+          <p className="py-6 text-gray-600 dark:text-gray-300 max-w-md">
             Please submit the form below to contact me. I look forward to hearing from you!
           </p>
         </div>
@@ -33,8 +31,8 @@ const Contact = () => {
               type="text"
               name="name"
               placeholder="Enter your name"
-              className="p-3 bg-gray-900 bg-opacity-70 border-2 border-gray-700 rounded-md
-                text-white placeholder-gray-400
+              className="p-3 bg-white dark:bg-gray-900 bg-opacity-70 border-2 border-gray-300 dark:border-gray-700 rounded-md
+                text-text-light dark:text-white placeholder-gray-500 dark:placeholder-gray-400
                 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500
                 transition duration-300 outline-none"
               required
@@ -43,8 +41,8 @@ const Contact = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="p-3 bg-gray-900 bg-opacity-70 border-2 border-gray-700 rounded-md
-                text-white placeholder-gray-400
+              className="p-3 bg-white dark:bg-gray-900 bg-opacity-70 border-2 border-gray-300 dark:border-gray-700 rounded-md
+                text-text-light dark:text-white placeholder-gray-500 dark:placeholder-gray-400
                 focus:border-purple-400 focus:ring-2 focus:ring-purple-500
                 transition duration-300 outline-none"
               required
@@ -53,8 +51,8 @@ const Contact = () => {
               name="message"
               placeholder="Enter your message"
               rows="8"
-              className="p-3 bg-gray-900 bg-opacity-70 border-2 border-gray-700 rounded-md
-                text-white placeholder-gray-400
+              className="p-3 bg-white dark:bg-gray-900 bg-opacity-70 border-2 border-gray-300 dark:border-gray-700 rounded-md
+                text-text-light dark:text-white placeholder-gray-500 dark:placeholder-gray-400
                 focus:border-pink-400 focus:ring-2 focus:ring-pink-500
                 transition duration-300 outline-none resize-none"
               required

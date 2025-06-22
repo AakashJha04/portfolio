@@ -5,19 +5,21 @@ import { Link } from 'react-scroll';
 
 const Home = () => {
   return (
-          <section
-        name="Home"
-        className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 pt-20"
-      >
-
+    <section
+      name="Home"
+      className="h-screen w-full pt-20 
+        bg-background-light text-text-light 
+        dark:bg-background-dark dark:text-text-dark 
+        transition-colors duration-300"
+    >
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         
         {/* Text Section */}
         <div className="flex flex-col justify-center h-full text-center md:text-left">
-          <h1 className="text-4xl sm:text-7xl font-extrabold text-white leading-tight">
+          <h1 className="text-4xl sm:text-7xl font-extrabold leading-tight">
             I'm a Full Stack Developer
           </h1>
-          <p className="text-gray-400 py-6 max-w-md text-lg">
+          <p className="text-subtle-light dark:text-subtle-dark py-6 max-w-md text-lg">
             I build scalable systems and solve real-world problems using clean code,
             cloud technologies, and thoughtful design.
           </p>
@@ -26,7 +28,9 @@ const Home = () => {
               to="Portfolio"
               smooth={true}
               duration={500}
-              className="group inline-flex items-center px-6 py-3 text-white font-medium rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="group inline-flex items-center px-6 py-3 font-medium rounded-md 
+                text-white bg-gradient-to-r from-cyan-500 to-blue-500 
+                hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               Portfolio
               <span className="ml-2 group-hover:rotate-90 transition-transform duration-300">

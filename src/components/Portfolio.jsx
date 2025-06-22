@@ -77,22 +77,29 @@ const Portfolio = () => {
   ];
 
   return (
-    <div name="Portfolio" className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-800 w-full text-white min-h-screen">
+    <div
+      name="Portfolio"
+      className="w-full min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"
+    >
       <div className="max-w-screen-xl p-6 mx-auto flex flex-col justify-center h-full">
         <div className="pb-12 text-center">
-          <h2 className="text-5xl font-extrabold text-gray-100 border-b-4 border-gray-500 inline-block mb-4">Portfolio</h2>
-          <p className="text-lg text-gray-400 mt-4">Here are some of my selected works. Click to explore the demo and source code.</p>
+          <h2 className="text-5xl font-extrabold border-b-4 border-gray-300 dark:border-gray-600 inline-block mb-4">
+            Portfolio
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
+            Here are some of my selected works. Click to explore the demo and source code.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {portfolios.map(({ id, title, description, techStack, demoLink, codeLink }) => (
             <div
               key={id}
-              className="bg-gray-900 border border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1"
+              className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1"
             >
-              <h3 className="text-xl font-bold text-blue-300 mb-2 text-center">{title}</h3>
-              <p className="text-sm text-gray-400 text-center italic mb-3">{techStack}</p>
-              <p className="text-gray-300 text-center text-sm mb-6">{description}</p>
+              <h3 className="text-xl font-bold text-blue-600 dark:text-blue-300 mb-2 text-center">{title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 text-center italic mb-3">{techStack}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-center text-sm mb-6">{description}</p>
               <div className="flex justify-center gap-4">
                 <a
                   href={demoLink}

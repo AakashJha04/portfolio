@@ -5,17 +5,22 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+
+import { ThemeProvider } from './context/ThemeContext'
+
 function App() {
   return (
-    <>
-    <NavBar/>
-    <Home/>
-    <About/>
-    <Portfolio/>
-    <Experience/>
-    <Contact/>
-    <SocialLinks/>
-    </>
+    <ThemeProvider>
+      <>
+        <NavBar />
+        <Home />
+        <About />
+        <Portfolio />
+        <Experience />
+        <Contact />
+        <SocialLinks />
+      </>
+    </ThemeProvider>
   );
 }
 

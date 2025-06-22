@@ -39,6 +39,8 @@ import WebSocket from "../assets/websocket.png";
 import pytest from "../assets/pytest.png";
 import junit from "../assets/Jubit.png";
 
+
+
 const techGroups = [
   {
     category: "Programming Languages",
@@ -114,47 +116,79 @@ const techGroups = [
   },
 ];
 
+
+
+const fadeIn = (delay = 0) => ({
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay },
+  },
+});
+
 const Experience = () => {
   return (
     <div
       name="Experience"
-      className="bg-gradient-to-b from-gray-900 to-black w-full py-16 px-4"
+      className="w-full py-16 px-4 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"
     >
-      <div className="max-w-screen-xl mx-auto flex flex-col justify-center text-white">
-        <div className="mb-10 text-center">
-          <h2 className="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+      <div className="max-w-screen-xl mx-auto flex flex-col justify-center">
+        <div className="mb-16 text-center">
+          <motion.h2
+            className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn(0)}
+            viewport={{ once: true }}
+          >
             Experience
-          </h2>
-          <p className="text-lg text-gray-400">Technologies I've worked with</p>
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn(0.2)}
+            viewport={{ once: true }}
+          >
+            Technologies I've worked with
+          </motion.p>
         </div>
 
         {techGroups.map((group, idx) => (
-          <div key={idx} className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-cyan-400 tracking-wide">
+          <motion.div
+            key={idx}
+            className="mb-14"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn(0.1 + idx * 0.2)}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-semibold mb-6 text-cyan-500 tracking-wide">
               {group.category}
             </h3>
+
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {group.items.map(({ id, title, bg }) => (
                 <motion.div
                   key={id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: id * 0.03 }}
-                  className="group relative cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="relative bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-cyan-400 transition-all duration-300 group"
                 >
                   <div
-                    className="w-full h-28 bg-cover bg-center"
+                    className="w-full h-20 bg-contain bg-no-repeat bg-center"
                     style={{ backgroundImage: `url(${bg})` }}
-                  ></div>
-                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 backdrop-blur-sm transition duration-300 flex items-center justify-center">
-                    <p className="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300">
+                  />
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 backdrop-blur-sm flex items-center justify-center transition duration-300">
+                    <p className="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300 drop-shadow">
                       {title}
                     </p>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
