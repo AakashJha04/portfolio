@@ -1,122 +1,88 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  FaReact, FaNodeJs, FaJava, FaDatabase, FaAws, FaGithub, FaPython,
+  FaHtml5, FaCss3Alt, FaJs, FaDocker, FaGitAlt
+} from "react-icons/fa";
 
-// Assets
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import js from "../assets/javascript.png";
-import reactImg from "../assets/react.png";
-import graphql from "../assets/graphql.png";
-import dropbox from "../assets/dropbox.png";
-import github from "../assets/github.png";
-import tailwind from "../assets/tailwind.png";
-import docker from "../assets/docker.jpeg";
-import aws from "../assets/AWS.png";
-import node from "../assets/node.png";
-import python from "../assets/python.png";
-import typescript from "../assets/ts.png";
-import cicd from "../assets/cicd.jpeg";
-import prisma from "../assets/prisma.png";
-import mysql from "../assets/my-sql.png";
-import mongodb from "../assets/mongodb.png";
-import postgresql from "../assets/psql.png";
-import jest from "../assets/jest.png";
-import cypress from "../assets/cypress.png";
-import cpp from "../assets/c.png";
-import c from "../assets/c_image.jpeg";
-import java from "../assets/java.png";
-import hibernate from "../assets/hibeenate.png";
-import jpa from "../assets/jpa.png";
-import springBoot from "../assets/springboot.png";
-import sql from "../assets/sql.jpeg";
-import nextjs from "../assets/nextjs.png";
-import flask from "../assets/flask.png";
-import ks8 from "../assets/ks8.png";
-import zoho from "../assets/zoho.png";
-import gAPI from "../assets/GAPI.png";
-import Monorepo from "../assets/monorepo.png";
-import WebSocket from "../assets/websocket.png";
-import pytest from "../assets/pytest.png";
-import junit from "../assets/Jubit.png";
-
-
+import {
+  SiMongodb, SiSpringboot, SiExpress, SiNextdotjs, SiFlask,
+  SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiPrisma,
+  SiGraphql, SiCypress, SiJest, SiRedux, SiVisualstudiocode,
+  SiC, SiCplusplus, SiHibernate, SiJunit, SiPytest,
+  SiKubernetes, SiZoho, SiGooglecloud, SiDropbox
+} from "react-icons/si";
 
 const techGroups = [
   {
     category: "Programming Languages",
     items: [
-      { id: 1, title: "Java", bg: java },
-      { id: 2, title: "Python", bg: python },
-      { id: 3, title: "C", bg: c },
-      { id: 4, title: "C++", bg: cpp },
-      { id: 5, title: "JavaScript", bg: js },
-      { id: 6, title: "TypeScript", bg: typescript },
-      { id: 7, title: "SQL", bg: sql },
+      { id: 1, title: "Java", icon: <FaJava size={40} className="text-orange-500" /> },
+      { id: 2, title: "Python", icon: <FaPython size={40} className="text-yellow-400" /> },
+      { id: 3, title: "C", icon: <SiC size={40} className="text-blue-400" /> },
+      { id: 4, title: "C++", icon: <SiCplusplus size={40} className="text-blue-500" /> },
+      { id: 5, title: "JavaScript", icon: <FaJs size={40} className="text-yellow-400" /> },
+      { id: 6, title: "TypeScript", icon: <SiTypescript size={40} className="text-blue-600" /> },
+      { id: 7, title: "SQL", icon: <FaDatabase size={40} className="text-green-500" /> },
     ],
   },
   {
     category: "Frontend",
     items: [
-      { id: 8, title: "React", bg: reactImg },
-      { id: 9, title: "Next.js", bg: nextjs },
-      { id: 10, title: "Tailwind CSS", bg: tailwind },
-      { id: 11, title: "HTML", bg: html },
-      { id: 12, title: "CSS", bg: css },
+      { id: 8, title: "React", icon: <FaReact size={40} className="text-cyan-400" /> },
+      { id: 9, title: "Next.js", icon: <SiNextdotjs size={40} className="text-black dark:text-white" /> },
+      { id: 10, title: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-teal-400" /> },
+      { id: 11, title: "HTML", icon: <FaHtml5 size={40} className="text-orange-500" /> },
+      { id: 12, title: "CSS", icon: <FaCss3Alt size={40} className="text-blue-500" /> },
     ],
   },
   {
     category: "Backend",
     items: [
-      { id: 13, title: "Spring Boot", bg: springBoot },
-      { id: 14, title: "Express.js", bg: node },
-      { id: 15, title: "Flask", bg: flask },
+      { id: 13, title: "Spring Boot", icon: <SiSpringboot size={40} className="text-green-400" /> },
+      { id: 14, title: "Express.js", icon: <SiExpress size={40} className="text-gray-300" /> },
+      { id: 15, title: "Flask", icon: <SiFlask size={40} className="text-yellow-400" /> },
     ],
   },
   {
     category: "Databases",
     items: [
-      { id: 18, title: "PostgreSQL", bg: postgresql },
-      { id: 19, title: "MySQL", bg: mysql },
-      { id: 20, title: "MongoDB", bg: mongodb },
+      { id: 18, title: "PostgreSQL", icon: <SiPostgresql size={40} className="text-blue-400" /> },
+      { id: 19, title: "MySQL", icon: <SiMysql size={40} className="text-sky-500" /> },
+      { id: 20, title: "MongoDB", icon: <SiMongodb size={40} className="text-green-500" /> },
     ],
   },
   {
     category: "DevOps",
     items: [
-      { id: 22, title: "Docker", bg: docker },
-      { id: 23, title: "AWS", bg: aws },
-      { id: 24, title: "GitHub Actions", bg: github },
-      { id: 25, title: "CI/CD", bg: cicd },
-      { id: 37, title: "Kubernetes", bg: ks8 },
+      { id: 22, title: "Docker", icon: <FaDocker size={40} className="text-blue-500" /> },
+      { id: 23, title: "AWS", icon: <FaAws size={40} className="text-orange-400" /> },
+      { id: 24, title: "GitHub Actions", icon: <FaGithub size={40} className="text-white dark:text-gray-300" /> },
+      { id: 25, title: "Kubernetes", icon: <SiKubernetes size={40} className="text-blue-400" /> },
     ],
   },
   {
     category: "Cloud & APIs",
     items: [
-      { id: 26, title: "Dropbox API", bg: dropbox },
-      { id: 27, title: "Zoho Lims API", bg: zoho },
-      { id: 28, title: "Google APIs", bg: gAPI },
+      { id: 26, title: "Dropbox API", icon: <SiDropbox size={40} className="text-blue-400" /> },
+      { id: 27, title: "Zoho Lims API", icon: <SiZoho size={40} className="text-red-400" /> },
+      { id: 28, title: "Google APIs", icon: <SiGooglecloud size={40} className="text-red-400" /> },
     ],
   },
   {
     category: "Tools & Others",
     items: [
-      { id: 29, title: "GraphQL", bg: graphql },
-      { id: 30, title: "Git & GitHub", bg: github },
-      { id: 31, title: "Monorepo", bg: Monorepo },
-      { id: 32, title: "WebSocket", bg: WebSocket },
-      { id: 33, title: "Pytest", bg: pytest },
-      { id: 34, title: "JUnit", bg: junit },
-      { id: 35, title: "Jest", bg: jest },
-      { id: 36, title: "Cypress", bg: cypress },
-      { id: 16, title: "Hibernate", bg: hibernate },
-      { id: 17, title: "JPA", bg: jpa },
-      { id: 21, title: "Prisma", bg: prisma },
+      { id: 29, title: "GraphQL", icon: <SiGraphql size={40} className="text-pink-500" /> },
+      { id: 30, title: "Git & GitHub", icon: <FaGitAlt size={40} className="text-orange-500" /> },
+      { id: 31, title: "Prisma", icon: <SiPrisma size={40} className="text-indigo-500" /> },
+      { id: 32, title: "WebSocket", icon: <SiRedux size={40} className="text-purple-400" /> }, // fallback
+      { id: 33, title: "Pytest", icon: <SiPytest size={40} className="text-yellow-300" /> },
+      { id: 35, title: "Jest", icon: <SiJest size={40} className="text-rose-500" /> },
+      { id: 36, title: "Cypress", icon: <SiCypress size={40} className="text-emerald-400" /> },
+      { id: 37, title: "Hibernate", icon: <SiHibernate size={40} className="text-yellow-600" /> },
     ],
   },
 ];
-
-
 
 const fadeIn = (delay = 0) => ({
   hidden: { opacity: 0, y: 30 },
@@ -169,22 +135,17 @@ const Experience = () => {
             </h3>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {group.items.map(({ id, title, bg }) => (
+              {group.items.map(({ id, title, icon }) => (
                 <motion.div
                   key={id}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="relative bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-cyan-400 transition-all duration-300 group"
+                  className="bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-cyan-400 transition-all duration-300 group flex flex-col items-center justify-center p-4 space-y-2"
                 >
-                  <div
-                    className="w-full h-20 bg-contain bg-no-repeat bg-center"
-                    style={{ backgroundImage: `url(${bg})` }}
-                  />
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 backdrop-blur-sm flex items-center justify-center transition duration-300">
-                    <p className="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300 drop-shadow">
-                      {title}
-                    </p>
-                  </div>
+                  <div>{icon}</div>
+                  <p className="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300 text-center">
+                    {title}
+                  </p>
                 </motion.div>
               ))}
             </div>
