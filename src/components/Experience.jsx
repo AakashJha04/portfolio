@@ -10,7 +10,8 @@ import {
   SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiPrisma,
   SiGraphql, SiCypress, SiJest, SiRedux, SiVisualstudiocode,
   SiC, SiCplusplus, SiHibernate, SiJunit, SiPytest,
-  SiKubernetes, SiZoho, SiGooglecloud, SiDropbox
+  SiKubernetes, SiZoho, SiGooglecloud, SiDropbox,
+  SiDotnet, SiAngular
 } from "react-icons/si";
 
 const techGroups = [
@@ -34,22 +35,25 @@ const techGroups = [
       { id: 10, title: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-teal-400" /> },
       { id: 11, title: "HTML", icon: <FaHtml5 size={40} className="text-orange-500" /> },
       { id: 12, title: "CSS", icon: <FaCss3Alt size={40} className="text-blue-500" /> },
+      { id: 13, title: "Angular", icon: <SiAngular size={40} className="text-red-500" /> }
     ],
   },
   {
     category: "Backend",
     items: [
-      { id: 13, title: "Spring Boot", icon: <SiSpringboot size={40} className="text-green-400" /> },
-      { id: 14, title: "Express.js", icon: <SiExpress size={40} className="text-gray-300" /> },
-      { id: 15, title: "Flask", icon: <SiFlask size={40} className="text-yellow-400" /> },
+      { id: 14, title: "Spring Boot", icon: <SiSpringboot size={40} className="text-green-400" /> },
+      { id: 15, title: "Express.js", icon: <SiExpress size={40} className="text-gray-300" /> },
+      { id: 16, title: "Flask", icon: <SiFlask size={40} className="text-yellow-400" /> },
+      { id: 17, title: "C# .NET Core", icon: <SiDotnet size={40} className="text-purple-500" /> },
+      { id: 18, title: "ASP.NET", icon: <SiDotnet size={40} className="text-blue-500" /> },
     ],
   },
   {
     category: "Databases",
     items: [
-      { id: 18, title: "PostgreSQL", icon: <SiPostgresql size={40} className="text-blue-400" /> },
-      { id: 19, title: "MySQL", icon: <SiMysql size={40} className="text-sky-500" /> },
-      { id: 20, title: "MongoDB", icon: <SiMongodb size={40} className="text-green-500" /> },
+      { id: 19, title: "PostgreSQL", icon: <SiPostgresql size={40} className="text-blue-400" /> },
+      { id: 20, title: "MySQL", icon: <SiMysql size={40} className="text-sky-500" /> },
+      { id: 21, title: "MongoDB", icon: <SiMongodb size={40} className="text-green-500" /> },
     ],
   },
   {
@@ -77,9 +81,9 @@ const techGroups = [
       { id: 31, title: "Prisma", icon: <SiPrisma size={40} className="text-indigo-500" /> },
       { id: 32, title: "WebSocket", icon: <SiRedux size={40} className="text-purple-400" /> }, // fallback
       { id: 33, title: "Pytest", icon: <SiPytest size={40} className="text-yellow-300" /> },
-      { id: 35, title: "Jest", icon: <SiJest size={40} className="text-rose-500" /> },
-      { id: 36, title: "Cypress", icon: <SiCypress size={40} className="text-emerald-400" /> },
-      { id: 37, title: "Hibernate", icon: <SiHibernate size={40} className="text-yellow-600" /> },
+      { id: 34, title: "Jest", icon: <SiJest size={40} className="text-rose-500" /> },
+      { id: 35, title: "Cypress", icon: <SiCypress size={40} className="text-emerald-400" /> },
+      { id: 36, title: "Hibernate", icon: <SiHibernate size={40} className="text-yellow-600" /> },
     ],
   },
 ];
