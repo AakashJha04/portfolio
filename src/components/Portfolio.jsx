@@ -93,18 +93,28 @@ const Portfolio = () => {
   ];
 
   return (
-    <div
+    <section
       name="Portfolio"
-      className="w-full min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"
+      className="relative w-full min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 
+      dark:from-gray-900 dark:via-gray-800 dark:to-black text-text-light dark:text-text-dark px-6 py-16 transition-colors duration-300"
     >
-      <div className="max-w-screen-xl p-8 mx-auto flex flex-col justify-center h-full">
+      {/* Floating Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
+
+      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col justify-center h-full">
         {/* Heading */}
-        <div className="pb-12 text-center">
-          <h2 className="text-5xl font-extrabold border-b-4 border-gray-300 dark:border-gray-600 inline-block mb-6">
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+          >
             Portfolio
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-            Scroll sideways to explore all my featured projects 👇
+          </motion.h2>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Scroll sideways to explore my featured projects ✨
           </p>
         </div>
 
@@ -115,32 +125,34 @@ const Portfolio = () => {
               ({ id, title, description, techStack, demoLink, codeLink, image }) => (
                 <motion.div
                   key={id}
-                  className="relative min-w-[280px] max-w-[320px] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl group cursor-pointer"
-                  whileHover={{ scale: 1.03 }}
+                  className="relative min-w-[300px] max-w-[340px] flex-shrink-0 rounded-2xl overflow-hidden 
+                  backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/40 
+                  shadow-2xl group cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Background Image */}
+                  {/* Image */}
                   <img
                     src={image}
                     alt={title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
-
                   {/* Content */}
-                  <div className="absolute bottom-0 p-6 w-full text-center text-white">
-                    <h3 className="text-xl font-bold mb-2">{title}</h3>
-                    <p className="text-sm italic text-gray-200 mb-2">{techStack}</p>
-                    <p className="text-gray-300 text-sm mb-4">{description}</p>
+                  <div className="p-6 text-center">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-sm italic text-gray-700 dark:text-gray-300 mb-2">{techStack}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{description}</p>
 
                     <div className="flex justify-center gap-4">
                       <a
                         href={demoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 text-sm font-medium text-center bg-blue-600 hover:bg-blue-500 rounded-md shadow"
+                        className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow 
+                        bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:shadow-xl transition"
                       >
                         Demo
                       </a>
@@ -148,7 +160,8 @@ const Portfolio = () => {
                         href={codeLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 text-sm font-medium text-center bg-green-600 hover:bg-green-500 rounded-md shadow"
+                        className="px-4 py-2 text-sm font-medium text-white rounded-lg shadow 
+                        bg-gradient-to-r from-green-500 via-teal-500 to-cyan-500 hover:shadow-xl transition"
                       >
                         Code
                       </a>
@@ -160,7 +173,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
