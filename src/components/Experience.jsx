@@ -1,19 +1,21 @@
+// src/components/Experience.jsx (or Experience.js)
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaReact, FaNodeJs, FaJava, FaDatabase, FaAws, FaGithub, FaPython,
+  FaReact, FaJava, FaDatabase, FaAws, FaGithub, FaPython,
   FaHtml5, FaCss3Alt, FaJs, FaDocker, FaGitAlt
 } from "react-icons/fa";
 
 import {
   SiMongodb, SiSpringboot, SiExpress, SiNextdotjs, SiFlask,
   SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiPrisma,
-  SiGraphql, SiCypress, SiJest, SiRedux, SiVisualstudiocode,
-  SiC, SiCplusplus, SiHibernate, SiJunit, SiPytest,
+  SiGraphql, SiCypress, SiJest, SiRedux,
+  SiC, SiCplusplus, SiHibernate, SiPytest,
   SiKubernetes, SiZoho, SiGooglecloud, SiDropbox,
   SiDotnet, SiAngular
 } from "react-icons/si";
 
+// ✅ Your techGroups preserved and used below
 const techGroups = [
   {
     category: "Programming Languages",
@@ -89,24 +91,31 @@ const techGroups = [
 ];
 
 const fadeIn = (delay = 0) => ({
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay },
+    transition: { duration: 0.6, delay },
   },
 });
 
 const Experience = () => {
   return (
-    <div
+    <section
       name="Experience"
-      className="w-full py-16 px-4 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"
+      className="relative w-full py-20 px-6 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark overflow-hidden"
     >
-      <div className="max-w-screen-xl mx-auto flex flex-col justify-center">
-        <div className="mb-16 text-center">
+      {/* Decorative gradient glows */}
+      <div className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-3xl" />
+
+      {/* Timeline vertical line */}
+      <div className="absolute top-0 left-8 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-fuchsia-500 to-transparent opacity-40 rounded-full" aria-hidden />
+
+      <div className="max-w-screen-xl mx-auto relative z-10">
+        <div className="mb-20 text-center">
           <motion.h2
-            className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500"
+            className="text-5xl sm:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500"
             initial="hidden"
             whileInView="visible"
             variants={fadeIn(0)}
@@ -115,39 +124,46 @@ const Experience = () => {
             Experience
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto"
+            className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             initial="hidden"
             whileInView="visible"
-            variants={fadeIn(0.2)}
+            variants={fadeIn(0.15)}
             viewport={{ once: true }}
           >
-            Technologies I've worked with
+            A journey through technologies I’ve worked with
           </motion.p>
         </div>
 
         {techGroups.map((group, idx) => (
           <motion.div
-            key={idx}
-            className="mb-14"
+            key={group.category}
+            className="mb-20 relative pl-16"
             initial="hidden"
             whileInView="visible"
-            variants={fadeIn(0.1 + idx * 0.2)}
-            viewport={{ once: true }}
+            variants={fadeIn(0.15 + idx * 0.15)}
+            viewport={{ once: true, margin: "-100px" }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-cyan-500 tracking-wide">
+            {/* Timeline node */}
+            <div className="absolute left-6 top-2 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 shadow-lg" />
+
+            {/* Category header */}
+            <h3 className="text-2xl sm:text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500">
               {group.category}
             </h3>
 
+            {/* Skills grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {group.items.map(({ id, title, icon }) => (
                 <motion.div
                   key={id}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.06 }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-cyan-400 transition-all duration-300 group flex flex-col items-center justify-center p-4 space-y-2"
+                  className="relative group p-5 rounded-2xl shadow-lg bg-white/60 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:shadow-cyan-500/30 flex flex-col items-center justify-center space-y-2"
                 >
-                  <div>{icon}</div>
-                  <p className="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300 text-center">
+                  {/* Hover glow */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/10 to-fuchsia-500/10 opacity-0 group-hover:opacity-100 blur-xl transition-opacity" />
+                  <div className="relative z-10">{icon}</div>
+                  <p className="text-sm sm:text-base font-semibold text-center text-gray-800 dark:text-gray-200 group-hover:text-cyan-400">
                     {title}
                   </p>
                 </motion.div>
@@ -156,7 +172,7 @@ const Experience = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
