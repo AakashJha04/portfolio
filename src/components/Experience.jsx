@@ -1,10 +1,10 @@
 // src/components/Experience.jsx
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaReact, FaJava, FaDatabase, FaAws, FaGithub, FaPython,
   FaHtml5, FaCss3Alt, FaJs, FaDocker, FaGitAlt, FaChevronDown, FaChevronUp
 } from "react-icons/fa";
-
 import { SiDotnet } from "react-icons/si";
 import {
   SiMongodb, SiSpringboot, SiExpress, SiNextdotjs, SiFlask,
@@ -99,29 +99,47 @@ const Experience = () => {
   return (
     <section
       name="Experience"
-      className="relative w-full py-16 px-6 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+      className="relative w-full min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-black text-text-light dark:text-text-dark px-6 py-16 transition-colors duration-300"
     >
-      <div className="max-w-screen-xl mx-auto">
-        <div className="mb-10 text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+      {/* Animated Background Blur Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 max-w-screen-xl mx-auto"
+      >
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+          >
             Experience
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A journey through technologies I’ve worked with
+          </motion.h2>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            A journey through technologies I’ve worked with 🚀
           </p>
         </div>
 
         {/* Cards layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {techGroups.map((group) => (
-            <div
+            <motion.div
               key={group.category}
-              className="rounded-2xl shadow-lg bg-white/60 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md overflow-hidden transition"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="rounded-2xl shadow-lg backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/40 overflow-hidden"
             >
               {/* Card header */}
               <button
                 onClick={() => toggleCard(group.category)}
-                className="w-full flex justify-between items-center px-4 py-3 bg-gradient-to-r from-cyan-400/20 to-fuchsia-500/20 dark:from-cyan-400/10 dark:to-fuchsia-500/10"
+                className="w-full flex justify-between items-center px-5 py-4 bg-gradient-to-r from-cyan-400/20 to-pink-500/20 dark:from-cyan-400/10 dark:to-pink-500/10"
               >
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                   {group.category}
@@ -134,25 +152,34 @@ const Experience = () => {
               </button>
 
               {/* Expandable skills */}
-              {openCard === group.category && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4">
-                  {group.items.map(({ id, title, icon }) => (
-                    <div
-                      key={id}
-                      className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/70 dark:bg-white/5 border border-black/5 dark:border-white/5 hover:border-cyan-400 transition"
-                    >
-                      {icon}
-                      <p className="mt-2 text-sm font-medium text-gray-800 dark:text-gray-200 text-center">
-                        {title}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+              <AnimatePresence>
+                {openCard === group.category && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-5"
+                  >
+                    {group.items.map(({ id, title, icon }) => (
+                      <motion.div
+                        key={id}
+                        whileHover={{ scale: 1.05 }}
+                        className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/60 dark:bg-white/5 border border-transparent hover:border-cyan-400/60 shadow-sm transition"
+                      >
+                        {icon}
+                        <p className="mt-2 text-sm font-medium text-gray-800 dark:text-gray-200 text-center">
+                          {title}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
