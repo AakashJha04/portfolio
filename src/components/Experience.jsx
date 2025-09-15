@@ -3,17 +3,16 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaReact, FaJava, FaDatabase, FaAws, FaGithub, FaPython,
-  FaHtml5, FaCss3Alt, FaJs, FaDocker, FaGitAlt, FaChevronDown, FaChevronUp
+  FaHtml5, FaCss3Alt, FaJs, FaDocker, FaGitAlt,
+  FaChevronDown, FaChevronUp
 } from "react-icons/fa";
-import { SiDotnet } from "react-icons/si";
-import {
-  SiMongodb, SiSpringboot, SiExpress, SiNextdotjs, SiFlask,
-  SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiPrisma,
-  SiGraphql, SiCypress, SiJest, SiRedux,
-  SiC, SiCplusplus, SiHibernate, SiPytest,
+import { SiDotnet, SiMongodb, SiSpringboot, SiExpress, SiNextdotjs, SiFlask,
+  SiTypescript, SiTailwindcss, SiPostgresql, SiMysql, SiPrisma, SiGraphql, 
+  SiCypress, SiJest, SiRedux, SiC, SiCplusplus, SiHibernate, SiPytest,
   SiKubernetes, SiZoho, SiGooglecloud, SiDropbox, SiAngular
 } from "react-icons/si";
 
+// Grouped skills
 const techGroups = [
   {
     category: "Programming Languages",
@@ -36,7 +35,7 @@ const techGroups = [
       { id: 11, title: "Tailwind CSS", icon: <SiTailwindcss size={28} className="text-teal-400" /> },
       { id: 12, title: "HTML", icon: <FaHtml5 size={28} className="text-orange-500" /> },
       { id: 13, title: "CSS", icon: <FaCss3Alt size={28} className="text-blue-500" /> },
-      { id: 14, title: "Angular", icon: <SiAngular size={28} className="text-red-500" /> }
+      { id: 14, title: "Angular", icon: <SiAngular size={28} className="text-red-500" /> },
     ],
   },
   {
@@ -58,33 +57,28 @@ const techGroups = [
     ],
   },
   {
-    category: "DevOps",
+    category: "DevOps & Cloud",
     items: [
       { id: 23, title: "Docker", icon: <FaDocker size={28} className="text-blue-500" /> },
       { id: 24, title: "AWS", icon: <FaAws size={28} className="text-orange-400" /> },
-      { id: 25, title: "GitHub Actions", icon: <FaGithub size={28} className="text-gray-700 dark:text-gray-300" /> },
-      { id: 26, title: "Kubernetes", icon: <SiKubernetes size={28} className="text-blue-400" /> },
+      { id: 25, title: "Kubernetes", icon: <SiKubernetes size={28} className="text-blue-400" /> },
+      { id: 26, title: "GitHub Actions", icon: <FaGithub size={28} className="text-gray-700 dark:text-gray-300" /> },
+      { id: 27, title: "Google APIs", icon: <SiGooglecloud size={28} className="text-red-400" /> },
+      { id: 28, title: "Dropbox API", icon: <SiDropbox size={28} className="text-blue-400" /> },
+      { id: 29, title: "Zoho Lims API", icon: <SiZoho size={28} className="text-red-400" /> },
     ],
   },
   {
-    category: "Cloud & APIs",
-    items: [
-      { id: 27, title: "Dropbox API", icon: <SiDropbox size={28} className="text-blue-400" /> },
-      { id: 28, title: "Zoho Lims API", icon: <SiZoho size={28} className="text-red-400" /> },
-      { id: 29, title: "Google APIs", icon: <SiGooglecloud size={28} className="text-red-400" /> },
-    ],
-  },
-  {
-    category: "Tools & Others",
+    category: "Tools & Testing",
     items: [
       { id: 30, title: "GraphQL", icon: <SiGraphql size={28} className="text-pink-500" /> },
-      { id: 31, title: "Git & GitHub", icon: <FaGitAlt size={28} className="text-orange-500" /> },
-      { id: 32, title: "Prisma", icon: <SiPrisma size={28} className="text-indigo-500" /> },
-      { id: 33, title: "WebSocket", icon: <SiRedux size={28} className="text-purple-400" /> },
-      { id: 34, title: "Pytest", icon: <SiPytest size={28} className="text-yellow-300" /> },
-      { id: 35, title: "Jest", icon: <SiJest size={28} className="text-rose-500" /> },
-      { id: 36, title: "Cypress", icon: <SiCypress size={28} className="text-emerald-400" /> },
-      { id: 37, title: "Hibernate", icon: <SiHibernate size={28} className="text-yellow-600" /> },
+      { id: 31, title: "Prisma", icon: <SiPrisma size={28} className="text-indigo-500" /> },
+      { id: 32, title: "WebSocket", icon: <SiRedux size={28} className="text-purple-400" /> },
+      { id: 33, title: "Pytest", icon: <SiPytest size={28} className="text-yellow-300" /> },
+      { id: 34, title: "Jest", icon: <SiJest size={28} className="text-rose-500" /> },
+      { id: 35, title: "Cypress", icon: <SiCypress size={28} className="text-emerald-400" /> },
+      { id: 36, title: "Hibernate", icon: <SiHibernate size={28} className="text-yellow-600" /> },
+      { id: 37, title: "Git & GitHub", icon: <FaGitAlt size={28} className="text-orange-500" /> },
     ],
   },
 ];
@@ -99,49 +93,39 @@ const Experience = () => {
   return (
     <section
       name="Experience"
-      className="relative w-full min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-black text-text-light dark:text-text-dark px-6 py-16 transition-colors duration-300"
+      className="relative w-full min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-black px-6 py-20 transition-colors duration-300"
     >
-      {/* Animated Background Blur Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
+      {/* Background Orbs */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative z-10 max-w-screen-xl mx-auto"
+        className="relative z-10 max-w-6xl mx-auto"
       >
         {/* Heading */}
-        <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-          >
-            Experience
-          </motion.h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Technical Skills
+          </h2>
+          <p className="mt-3 text-base md:text-lg text-gray-600 dark:text-gray-300">
             A journey through technologies I’ve worked with 🚀
           </p>
         </div>
 
-        {/* Cards layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-8">
           {techGroups.map((group) => (
             <motion.div
               key={group.category}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="rounded-2xl shadow-lg backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/40 overflow-hidden"
+              className="rounded-2xl shadow-xl backdrop-blur-lg bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/30 overflow-hidden cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              onClick={() => toggleCard(group.category)}
             >
-              {/* Card header */}
-              <button
-                onClick={() => toggleCard(group.category)}
-                className="w-full flex justify-between items-center px-5 py-4 bg-gradient-to-r from-cyan-400/20 to-pink-500/20 dark:from-cyan-400/10 dark:to-pink-500/10"
-              >
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+              <div className="flex justify-between items-center p-5 bg-gradient-to-r from-cyan-400/20 to-pink-500/20 dark:from-cyan-400/10 dark:to-pink-500/10">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {group.category}
                 </h3>
                 {openCard === group.category ? (
@@ -149,9 +133,9 @@ const Experience = () => {
                 ) : (
                   <FaChevronDown className="text-gray-600 dark:text-gray-300" />
                 )}
-              </button>
+              </div>
 
-              {/* Expandable skills */}
+              {/* Skills */}
               <AnimatePresence>
                 {openCard === group.category && (
                   <motion.div
@@ -165,7 +149,7 @@ const Experience = () => {
                       <motion.div
                         key={id}
                         whileHover={{ scale: 1.05 }}
-                        className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/60 dark:bg-white/5 border border-transparent hover:border-cyan-400/60 shadow-sm transition"
+                        className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/70 dark:bg-white/5 border border-transparent hover:border-cyan-400/50 shadow-sm transition-all"
                       >
                         {icon}
                         <p className="mt-2 text-sm font-medium text-gray-800 dark:text-gray-200 text-center">
