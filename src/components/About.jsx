@@ -39,10 +39,11 @@ const About = () => {
     },
     {
       title: "Backend & Databases",
-      desc: "Expertise in Java (Spring Boot, Hibernate, JPA) with strong SQL & NoSQL knowledge.",
+      desc: "Expertise in Java (Spring Boot, Hibernate, JPA), Flask, with strong SQL & NoSQL knowledge.",
       icons: [
         <FaJava className="text-orange-500" size={28} />,
         <SiSpringboot className="text-emerald-500" size={28} />,
+        <SiFlask className="text-teal-300" size={28} />,
         <FaDatabase className="text-cyan-400" size={28} />,
       ],
     },
@@ -50,7 +51,6 @@ const About = () => {
       title: "Cloud & DevOps",
       desc: "Skilled in REST APIs, CI/CD pipelines, and deployments on AWS.",
       icons: [
-        <SiFlask className="text-teal-300" size={28} />,
         <FaGithub className="text-slate-200" size={28} />,
         <FaAws className="text-yellow-500" size={28} />,
       ],
@@ -92,29 +92,32 @@ const About = () => {
       <div className="relative z-10 max-w-screen-lg mx-auto flex flex-col justify-center h-full">
         {/* Header */}
         <motion.header
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="pb-12 text-center"
-        >
-          <h2 className="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">
-            About Me
-          </h2>
-        </motion.header>
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="pb-12 text-center"
+>
+  <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">
+    About Me
+  </h2>
+</motion.header>
+
 
         {/* Intro */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg sm:text-xl leading-relaxed text-center max-w-3xl mx-auto mb-12 text-gray-700 dark:text-gray-300"
+          className="text-base sm:text-lg leading-relaxed text-center max-w-3xl mx-auto mb-12 text-gray-700 dark:text-gray-300"
         >
           I’m a passionate{" "}
-          <span className="text-cyan-500 font-semibold">Full-Stack Developer</span> who loves turning complex problems into clean, maintainable solutions. With strong foundations in{" "}
+          <span className="text-cyan-500 font-semibold">Full-Stack Developer</span> who loves turning complex problems into clean, maintainable solutions.  
+          With strong foundations in{" "}
           <span className="font-semibold text-amber-500">system design, DSA & algorithms</span>, I constantly explore and innovate with{" "}
           <span className="text-pink-400 font-semibold">AI/ML</span>,{" "}
-          <span className="text-purple-400 font-semibold">.NET</span>, and{" "}
-          <span className="text-indigo-400 font-semibold">cloud-native development</span>.
+          <span className="text-purple-400 font-semibold">.NET</span>,{" "}
+          <span className="text-indigo-400 font-semibold">cloud-native development</span>, and{" "}
+          <span className="text-green-400 font-semibold">DevOps</span>.
         </motion.p>
 
         {/* Skills Section */}

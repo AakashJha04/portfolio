@@ -1,3 +1,4 @@
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
@@ -6,7 +7,7 @@
 
 @layer base {
   html {
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif; /* Default font */
   }
 }
 

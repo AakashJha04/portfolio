@@ -16,10 +16,10 @@ const Home = () => {
         text-text-light dark:text-text-dark 
         transition-colors duration-300 overflow-hidden flex items-center"
     >
-      {/* Animated Background Orbs */}
-      <div className="absolute top-24 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute top-40 right-1/3 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+      {/* Animated Background Orbs with blob animation */}
+      <div className="absolute top-24 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-blob"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute top-40 right-1/3 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
 
       <div className="relative z-10 max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row items-center justify-center px-6 gap-10 md:gap-16">
         
@@ -30,12 +30,12 @@ const Home = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col justify-center items-center md:items-start text-center md:text-left"
         >
-          <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight 
+          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight 
             bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
             Hi, I'm Aakash 👋
           </h1>
 
-          <p className="text-xl sm:text-2xl py-4 max-w-md font-medium 
+          <p className="text-lg sm:text-xl py-4 max-w-md font-medium 
             bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             <Typewriter
               words={[
@@ -54,9 +54,14 @@ const Home = () => {
             />
           </p>
 
-          <p className="text-gray-600 dark:text-gray-300 pb-6 max-w-md text-md sm:text-lg">
+          <p className="text-gray-600 dark:text-gray-300 pb-4 max-w-md text-sm sm:text-base">
             I build scalable systems and solve real-world problems using clean code,
             cloud technologies, and thoughtful design.
+          </p>
+
+          {/* Signature */}
+          <p className="font-signature text-2xl sm:text-3xl bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-6">
+            ~ Aakash Anand
           </p>
 
           {/* CTA Button */}
@@ -89,7 +94,7 @@ const Home = () => {
             <img
               src={MY_PHOTO}
               alt="Aakash Anand"
-              className="relative rounded-2xl shadow-2xl mx-auto w-52 sm:w-60 md:w-72 
+              className="relative rounded-2xl shadow-2xl mx-auto w-48 sm:w-60 md:w-72 
                 hover:scale-105 transition-transform duration-300"
             />
           </div>

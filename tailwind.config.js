@@ -12,7 +12,18 @@ module.exports = {
         'accent-dark': '#0ea5e9',
       },
       fontFamily: {
-        signature: ["Great Vibes"],
+        sans: ["Raleway", "sans-serif"],  // default body font
+        signature: ["Great Vibes", "cursive"], // handwriting logo font
+      },
+      animation: {
+        blob: "blob 8s infinite", // floating orb effect
+      },
+      keyframes: {
+        blob: {
+          "0%, 100%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+        },
       },
     },
   },
