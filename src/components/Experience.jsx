@@ -14,6 +14,7 @@ import {
   FaJs,
   FaDocker,
   FaGitAlt,
+  FaProjectDiagram,
 } from "react-icons/fa";
 
 import {
@@ -41,10 +42,12 @@ import {
   SiGooglecloud,
   SiDropbox,
   SiAngular,
+  SiGo,
+  SiStreamlit,
 } from "react-icons/si";
 
 /* ===========================
-   ALL TECH (UNCHANGED)
+   ALL TECH — FINAL
 =========================== */
 
 const skillSections = [
@@ -53,6 +56,7 @@ const skillSections = [
     skills: [
       { name: "Java", icon: <FaJava className="text-orange-500" /> },
       { name: "Python", icon: <FaPython className="text-yellow-400" /> },
+      { name: "Go", icon: <SiGo className="text-cyan-400" /> },
       { name: "C", icon: <SiC className="text-blue-400" /> },
       { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
@@ -70,6 +74,7 @@ const skillSections = [
       { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
       { name: "Angular", icon: <SiAngular className="text-red-500" /> },
+      { name: "Streamlit", icon: <SiStreamlit className="text-red-400" /> },
     ],
   },
   {
@@ -86,8 +91,10 @@ const skillSections = [
     title: "Databases",
     skills: [
       { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
+      { name: "PostGIS (Spatial DB)", icon: <SiPostgresql className="text-indigo-500" /> },
       { name: "MySQL", icon: <SiMysql className="text-sky-500" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+      { name: "Neo4j (Graph DB)", icon: <FaProjectDiagram className="text-emerald-500" /> },
     ],
   },
   {
@@ -125,13 +132,15 @@ const Experience = () => {
   return (
     <section
       name="Experience"
-      className="relative min-h-screen px-6 py-24 
-      bg-gradient-to-br 
-      from-gray-100 via-white to-gray-200
-      dark:from-gray-900 dark:via-gray-800 dark:to-black
-      transition-colors duration-300 overflow-hidden"
+      className="
+        relative min-h-screen px-6 py-24
+        bg-gradient-to-br
+        from-gray-100 via-white to-gray-200
+        dark:from-gray-900 dark:via-gray-800 dark:to-black
+        transition-colors duration-300 overflow-hidden
+      "
     >
-      {/* Floating orbs */}
+      {/* Floating background orbs */}
       <div className="absolute top-16 left-20 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-16 right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse" />
 
@@ -154,11 +163,11 @@ const Experience = () => {
                 {section.title}
               </h3>
 
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-5">
                 {section.skills.map((skill, idx) => (
                   <motion.div
                     key={idx}
-                    animate={{ y: [0, -12, 0] }}
+                    animate={{ y: [0, -10, 0] }}
                     transition={{
                       duration: 6,
                       repeat: Infinity,
@@ -167,16 +176,15 @@ const Experience = () => {
                     }}
                     whileHover={{ scale: 1.15 }}
                     className="
-                      w-32 h-32 flex flex-col items-center justify-center
-                      rounded-2xl backdrop-blur-xl
+                      w-24 h-24 flex flex-col items-center justify-center
+                      rounded-xl backdrop-blur-xl
                       bg-white/60 dark:bg-white/10
                       border border-gray-200 dark:border-white/20
-                      shadow-lg cursor-pointer
-                      transition-colors
+                      shadow-md cursor-pointer transition-colors
                     "
                   >
-                    <div className="text-3xl">{skill.icon}</div>
-                    <p className="mt-2 text-sm text-gray-800 dark:text-gray-200 text-center">
+                    <div className="text-2xl">{skill.icon}</div>
+                    <p className="mt-1 text-xs text-gray-800 dark:text-gray-200 text-center">
                       {skill.name}
                     </p>
                   </motion.div>
