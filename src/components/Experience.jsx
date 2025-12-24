@@ -47,7 +47,7 @@ import {
 } from "react-icons/si";
 
 /* ===========================
-   ALL TECH — FINAL
+   SKILL DATA
 =========================== */
 
 const skillSections = [
@@ -70,7 +70,7 @@ const skillSections = [
     skills: [
       { name: "React", icon: <FaReact className="text-cyan-400" /> },
       { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-400" /> },
+      { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
       { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
       { name: "Angular", icon: <SiAngular className="text-red-500" /> },
@@ -81,7 +81,7 @@ const skillSections = [
     title: "Backend",
     skills: [
       { name: "Spring Boot", icon: <SiSpringboot className="text-green-400" /> },
-      { name: "Express.js", icon: <SiExpress className="text-gray-400 dark:text-gray-300" /> },
+      { name: "Express", icon: <SiExpress className="text-gray-400 dark:text-gray-300" /> },
       { name: "Flask", icon: <SiFlask className="text-yellow-400" /> },
       { name: "ASP.NET", icon: <SiDotnet className="text-blue-500" /> },
       { name: ".NET Core", icon: <SiDotnet className="text-purple-500" /> },
@@ -91,10 +91,10 @@ const skillSections = [
     title: "Databases",
     skills: [
       { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
-      { name: "PostGIS (Spatial DB)", icon: <SiPostgresql className="text-indigo-500" /> },
+      { name: "PostGIS", icon: <SiPostgresql className="text-indigo-500" /> },
       { name: "MySQL", icon: <SiMysql className="text-sky-500" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-      { name: "Neo4j (Graph DB)", icon: <FaProjectDiagram className="text-emerald-500" /> },
+      { name: "Neo4j", icon: <FaProjectDiagram className="text-emerald-500" /> },
     ],
   },
   {
@@ -103,10 +103,10 @@ const skillSections = [
       { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
       { name: "AWS", icon: <FaAws className="text-orange-400" /> },
       { name: "Kubernetes", icon: <SiKubernetes className="text-blue-400" /> },
-      { name: "GitHub Actions", icon: <FaGithub className="text-gray-600 dark:text-gray-300" /> },
+      { name: "GitHub Actions", icon: <FaGithub className="text-gray-500" /> },
       { name: "Google APIs", icon: <SiGooglecloud className="text-red-400" /> },
       { name: "Dropbox API", icon: <SiDropbox className="text-blue-400" /> },
-      { name: "Zoho LIMS API", icon: <SiZoho className="text-red-400" /> },
+      { name: "Zoho LIMS", icon: <SiZoho className="text-red-400" /> },
     ],
   },
   {
@@ -119,7 +119,7 @@ const skillSections = [
       { name: "Jest", icon: <SiJest className="text-rose-500" /> },
       { name: "Cypress", icon: <SiCypress className="text-emerald-400" /> },
       { name: "Hibernate", icon: <SiHibernate className="text-yellow-600" /> },
-      { name: "Git & GitHub", icon: <FaGitAlt className="text-orange-500" /> },
+      { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
     ],
   },
 ];
@@ -133,58 +133,60 @@ const Experience = () => {
     <section
       name="Experience"
       className="
-        relative min-h-screen px-6 py-24
+        relative min-h-screen px-6 py-20
         bg-gradient-to-br
         from-gray-100 via-white to-gray-200
         dark:from-gray-900 dark:via-gray-800 dark:to-black
-        transition-colors duration-300 overflow-hidden
+        transition-colors duration-300
       "
     >
-      {/* Floating background orbs */}
-      <div className="absolute top-16 left-20 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-16 right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse" />
+      {/* subtle floating lights */}
+      <div className="absolute top-24 left-24 w-72 h-72 bg-cyan-400/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-24 right-24 w-72 h-72 bg-pink-500/15 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Technical Skills
           </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
             Technologies floating through my engineering ecosystem ☁️
           </p>
         </div>
 
-        {/* Skill Sections */}
-        <div className="space-y-20">
+        {/* Skills */}
+        <div className="space-y-14">
           {skillSections.map((section, i) => (
             <div key={i}>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-8">
+              <h3 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-5">
                 {section.title}
               </h3>
 
-              <div className="flex flex-wrap gap-5">
+              <div className="flex flex-wrap gap-4">
                 {section.skills.map((skill, idx) => (
                   <motion.div
                     key={idx}
-                    animate={{ y: [0, -10, 0] }}
+                    animate={{ y: [0, -6, 0] }}
                     transition={{
-                      duration: 6,
+                      duration: 5,
                       repeat: Infinity,
-                      delay: idx * 0.25,
-                      ease: "easeInOut",
+                      delay: idx * 0.2,
                     }}
-                    whileHover={{ scale: 1.15 }}
+                    whileHover={{ scale: 1.08 }}
                     className="
-                      w-24 h-24 flex flex-col items-center justify-center
-                      rounded-xl backdrop-blur-xl
+                      w-20 h-[72px]
+                      flex flex-col items-center justify-center
+                      rounded-lg
                       bg-white/60 dark:bg-white/10
-                      border border-gray-200 dark:border-white/20
-                      shadow-md cursor-pointer transition-colors
+                      border border-gray-200 dark:border-white/15
+                      backdrop-blur-md
+                      shadow-sm
+                      cursor-pointer
                     "
                   >
-                    <div className="text-2xl">{skill.icon}</div>
-                    <p className="mt-1 text-xs text-gray-800 dark:text-gray-200 text-center">
+                    <div className="text-xl">{skill.icon}</div>
+                    <p className="mt-1 text-[11px] text-gray-800 dark:text-gray-200">
                       {skill.name}
                     </p>
                   </motion.div>
