@@ -19,3 +19,24 @@ html, body {
 .theme-section {
   @apply bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark transition-colors duration-300;
 }
+
+
+/* ===============================
+   FIRE TAIL CURSOR
+================================ */
+.fire-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff7a18, #ff005d, transparent);
+  box-shadow:
+    0 0 20px rgba(255, 122, 24, 0.8),
+    0 0 40px rgba(255, 0, 93, 0.6);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear;
+  z-index: 9999;
+}
