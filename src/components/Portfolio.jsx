@@ -182,7 +182,7 @@ const Portfolio = () => {
     <section
       name="Portfolio"
       className="
-        relative min-h-screen px-6 py-20
+        relative px-6 py-16
         bg-gradient-to-br
         from-gray-100 via-white to-gray-200
         dark:from-gray-900 dark:via-gray-800 dark:to-black
@@ -195,7 +195,7 @@ const Portfolio = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Portfolio
           </h2>
@@ -257,7 +257,7 @@ const Portfolio = () => {
         </AnimatePresence>
 
         {/* Pagination */}
-        <div className="flex justify-center gap-4 mt-12">
+        <div className="flex justify-center gap-4 mt-8">
           <button
             disabled={page === 1}
             onClick={() => setPage(page - 1)}

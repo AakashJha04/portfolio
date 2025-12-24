@@ -169,7 +169,7 @@ const About = () => {
     <section
       name="About"
       className="
-        relative min-h-screen px-6 py-24
+        relative px-6 py-20
         bg-gradient-to-br
         from-gray-100 via-white to-gray-200
         dark:from-gray-900 dark:via-gray-800 dark:to-black
@@ -186,7 +186,7 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             About Me
@@ -198,14 +198,14 @@ const About = () => {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-8">
           {cards.map((card, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -8 }}
               className="
                 rounded-2xl p-6
                 bg-white/60 dark:bg-white/10
@@ -232,10 +232,7 @@ const About = () => {
 
               <div className="flex flex-wrap gap-4 text-2xl">
                 {card.icons.map((icon, i) => (
-                  <motion.span
-                    key={i}
-                    whileHover={{ scale: 1.25, rotate: 8 }}
-                  >
+                  <motion.span key={i} whileHover={{ scale: 1.2, rotate: 6 }}>
                     {icon}
                   </motion.span>
                 ))}
