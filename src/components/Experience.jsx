@@ -131,7 +131,7 @@ const skillSections = [
 const Experience = () => {
   return (
     <section
-      name="Experience"
+      name="Skills"
       className="
         relative min-h-screen px-6 py-20
         bg-gradient-to-br
