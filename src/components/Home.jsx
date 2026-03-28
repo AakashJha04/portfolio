@@ -25,7 +25,7 @@ const Home = () => {
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-28 h-full flex items-center">
+      <div className="relative max-w-7xl mx-auto px-6 pt-36 md:pt-40 lg:pt-44 h-full flex items-center">
         <div className="grid md:grid-cols-2 gap-16 items-center w-full">
 
           {/* ================= LEFT TEXT ================= */}
@@ -67,6 +67,23 @@ const Home = () => {
               <span className="font-semibold text-purple-400"> data structures</span>,
               and <span className="font-semibold text-pink-400"> clean code</span>.
             </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+              {[
+                { value: "2+", label: "Years Experience" },
+                { value: "50+", label: "Projects Delivered" },
+                { value: "100%", label: "Client Satisfaction" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -4 }}
+                  className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/60 p-4 text-center shadow-sm"
+                >
+                  <p className="text-2xl font-extrabold text-cyan-500 dark:text-cyan-400">{item.value}</p>
+                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">{item.label}</p>
+                </motion.div>
+              ))}
+            </div>
 
             {/* CTA */}
             <div className="pt-6 flex gap-6">

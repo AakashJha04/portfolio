@@ -133,7 +133,7 @@ const Experience = () => {
     <section
       name="Skills"
       className="
-        relative min-h-screen px-6 py-20
+        relative min-h-screen px-6 py-14 overflow-hidden
         bg-gradient-to-br
         from-gray-100 via-white to-gray-200
         dark:from-gray-900 dark:via-gray-800 dark:to-black
@@ -156,37 +156,45 @@ const Experience = () => {
         </div>
 
         {/* Skills */}
-        <div className="space-y-14">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           {skillSections.map((section, i) => (
-            <div key={i}>
-              <h3 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-5">
+            <div
+              key={i}
+              className="
+                rounded-3xl p-6 bg-white/70 dark:bg-slate-900/60
+                border border-gray-200 dark:border-slate-700
+                shadow-xl dark:shadow-black/30
+                backdrop-blur-xl
+              "
+            >
+              <h3 className="text-lg md:text-xl font-bold text-slate-800 dark:text-gray-100 mb-5">
                 {section.title}
               </h3>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
                 {section.skills.map((skill, idx) => (
                   <motion.div
                     key={idx}
-                    animate={{ y: [0, -6, 0] }}
+                    animate={{ y: [0, -4, 0] }}
                     transition={{
-                      duration: 5,
+                      duration: 4,
                       repeat: Infinity,
-                      delay: idx * 0.2,
+                      delay: idx * 0.08,
                     }}
                     whileHover={{ scale: 1.08 }}
                     className="
-                      w-20 h-[72px]
                       flex flex-col items-center justify-center
-                      rounded-lg
-                      bg-white/60 dark:bg-white/10
-                      border border-gray-200 dark:border-white/15
-                      backdrop-blur-md
+                      gap-1 p-2 rounded-xl
+                      bg-white/70 dark:bg-slate-800/60
+                      border border-gray-200 dark:border-white/10
+                      text-center
                       shadow-sm
-                      cursor-pointer
+                      hover:shadow-lg hover:-translate-y-0.5
+                      transition-transform duration-300
                     "
                   >
-                    <div className="text-xl">{skill.icon}</div>
-                    <p className="mt-1 text-[11px] text-gray-800 dark:text-gray-200">
+                    <span className="text-2xl">{skill.icon}</span>
+                    <p className="text-[11px] sm:text-xs text-slate-700 dark:text-slate-200">
                       {skill.name}
                     </p>
                   </motion.div>

@@ -27,26 +27,26 @@ const Contact = () => {
     <section
       name="Contact"
       className="
-        relative min-h-screen px-6 py-28
+        relative min-h-screen px-6 py-20
         bg-gradient-to-br
         from-gray-100 via-white to-gray-200
         dark:from-gray-900 dark:via-gray-800 dark:to-black
         transition-colors duration-300
-        flex items-center
+        flex items-center justify-center
       "
     >
       {/* Ambient Orbs */}
       <div className="absolute top-20 left-10 w-80 h-80 bg-cyan-400/20 blur-[140px] rounded-full" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 blur-[160px] rounded-full" />
 
-      <div className="relative z-10 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-        {/* Header */}
+        {/* Info */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="lg:text-left text-center"
         >
           <h2 className="
             text-5xl md:text-6xl font-extrabold
@@ -57,10 +57,17 @@ const Contact = () => {
             Let’s Work Together
           </h2>
 
-          <p className="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
+          <p className="mt-4 max-w-2xl mx-auto lg:max-w-none text-gray-600 dark:text-gray-300 text-lg">
             Have an idea, opportunity, or just want to say hi?  
             I’d love to hear from you.
           </p>
+
+          <div className="mt-8">
+            <p className="rounded-2xl bg-white/80 dark:bg-white/10 border border-gray-200 dark:border-slate-700 p-5 text-center text-sm text-slate-700 dark:text-slate-300">
+              Submit the form and I’ll get back to you within 24 hours. You can also share a link to your idea or project in the message box for a faster reply.
+            </p>
+          </div>
+
         </motion.div>
 
         {/* Glass Form */}
@@ -72,11 +79,12 @@ const Contact = () => {
           transition={{ duration: 0.7 }}
           className="
             relative
-            rounded-3xl p-10
-            bg-white/70 dark:bg-white/10
-            backdrop-blur-2xl
-            border border-gray-200 dark:border-white/15
-            shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+            rounded-3xl p-8 sm:p-10
+            bg-white/85 dark:bg-slate-900/55
+            backdrop-blur-3xl
+            border border-gray-200 dark:border-slate-700
+            shadow-xl dark:shadow-black/40
+            max-w-xl mx-auto lg:mx-0
           "
         >
 

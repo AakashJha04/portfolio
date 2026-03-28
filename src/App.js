@@ -4,6 +4,7 @@ import SocialLinks from "./components/SocialLinks";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Experience from "./components/Experience";
+import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 
 import { ThemeProvider } from './context/ThemeContext'
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Portfolio />
         <Experience />
+        <Testimonials />
         <Contact />
         <SocialLinks />
       </>

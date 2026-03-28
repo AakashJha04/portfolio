@@ -14,8 +14,9 @@ const NavBar = () => {
     { id: 1, link: "Home" },
     { id: 2, link: "About" },
     { id: 3, link: "Portfolio" },
-    { id: 4, link: "Skills" },   // ✅ RENAMED
-    { id: 5, link: "Contact" },
+    { id: 4, link: "Skills" },
+    { id: 5, link: "Testimonials" },
+    { id: 6, link: "Contact" },
   ];
 
   return (
@@ -49,17 +50,17 @@ const NavBar = () => {
       </Link>
 
       {/* Desktop Nav */}
-      <ul className="hidden md:flex gap-8">
+      <ul className="hidden md:flex gap-6 lg:gap-8 items-center">
         {links.map(({ id, link }) => (
           <motion.li
             key={id}
             whileHover={{ scale: 1.1 }}
             className="
-              relative cursor-pointer capitalize text-sm font-medium
+              relative cursor-pointer capitalize text-sm md:text-base font-medium
               text-gray-700 dark:text-gray-300 group
             "
           >
-            <Link to={link} smooth duration={500}>
+            <Link to={link} smooth duration={500} className="py-2 px-1">
               {link}
             </Link>
             <span className="

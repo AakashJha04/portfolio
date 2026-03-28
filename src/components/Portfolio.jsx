@@ -205,6 +205,18 @@ const Portfolio = () => {
         </div>
 
         {/* Projects */}
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {['All', 'Backend', 'Cloud', 'AI/ML', 'Full-Stack'].map((tab) => (
+            <button
+              key={tab}
+              className="px-4 py-2 rounded-full text-sm bg-white/70 dark:bg-slate-800/70 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-200 hover:bg-cyan-400/30 hover:text-white transition"
+              onClick={() => setPage(1)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
         <AnimatePresence mode="wait">
           <motion.div
             key={page}
@@ -212,7 +224,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
           >
             {paginatedProjects.map((p, i) => (
               <motion.div

@@ -44,26 +44,45 @@ const SocialLinks = () => {
   ]
 
   return (
-    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
-      <ul>
-        {links.map(({ id, child, href, style, download, target, rel }) => (
-          <li
-            key={id}
-            className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-500 ${style || ''}`}
-          >
-            <a
-              href={href}
-              className="flex justify-between items-center w-full text-white"
-              download={download}
-              target={target}
-              rel={rel}
+    <>
+      <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
+        <ul>
+          {links.map(({ id, child, href, style, download, target, rel }) => (
+            <li
+              key={id}
+              className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-500 ${style || ''}`}
             >
-              {child}
-            </a>
-          </li>
+              <a
+                href={href}
+                className="flex justify-between items-center w-full text-white"
+                download={download}
+                target={target}
+                rel={rel}
+              >
+                {child}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3 bg-black/70 dark:bg-white/10 rounded-full p-2 backdrop-blur-md z-50">
+        {links.map(({ id, child, href, download, target, rel }) => (
+          <a
+            key={id}
+            href={href}
+            className="w-11 h-11 rounded-full flex items-center justify-center bg-white/90 dark:bg-gray-800/90 text-black dark:text-white shadow-md ring-1 ring-gray-300 dark:ring-white/20"
+            download={download}
+            target={target}
+            rel={rel}
+          >
+            {id === 1 && <FaGithub size={18} />}
+            {id === 2 && <HiOutlineMail size={18} />}
+            {id === 3 && <BsFillPersonLinesFill size={18} />}
+          </a>
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   )
 }
 
