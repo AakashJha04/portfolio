@@ -36,11 +36,11 @@ import {
 const cards = [
   {
     title: "Backend & Systems Engineering",
-    desc: "Design and build scalable backend systems with clean architecture, API contracts, and strong data consistency guarantees.",
+    desc: "Scalable backend systems with clean architecture and data consistency.",
     points: [
-      "REST APIs, authentication, authorization",
-      "Transaction management & data consistency",
-      "Performance optimization & caching strategies",
+      "REST APIs & auth",
+      "Performance & caching",
+      "Microservices",
     ],
     icons: [
       <FaJava className="text-orange-500" />,
@@ -49,14 +49,15 @@ const cards = [
       <SiRedis className="text-red-400" />,
     ],
     gradient: "from-cyan-500 to-blue-500",
+    level: 95,
   },
   {
     title: "Full-Stack Engineering",
-    desc: "Build end-to-end applications with clean UI, scalable backend, and well-defined data flows.",
+    desc: "End-to-end applications with clean UI and scalable backend.",
     points: [
-      "Frontend + backend integration",
-      "Reusable components & API-driven UI",
-      "Focus on maintainability and UX",
+      "Frontend-backend integration",
+      "Reusable components",
+      "UX-focused development",
     ],
     icons: [
       <FaReact className="text-cyan-400" />,
@@ -64,14 +65,15 @@ const cards = [
       <SiDotnet className="text-purple-500" />,
     ],
     gradient: "from-purple-500 to-pink-500",
+    level: 90,
   },
   {
     title: "Cloud & DevOps",
-    desc: "Deploy, scale, and operate production systems using cloud-native and container-based infrastructure.",
+    desc: "Cloud-native infrastructure and automated deployments.",
     points: [
-      "CI/CD pipelines & environment automation",
-      "Dockerized services & orchestration",
-      "Cloud deployments on AWS",
+      "CI/CD pipelines",
+      "Container orchestration",
+      "AWS deployments",
     ],
     icons: [
       <FaAws className="text-yellow-500" />,
@@ -79,14 +81,15 @@ const cards = [
       <SiKubernetes className="text-blue-400" />,
     ],
     gradient: "from-amber-500 to-orange-500",
+    level: 85,
   },
   {
     title: "Databases & Data Modeling",
-    desc: "Design efficient data models across relational and NoSQL databases based on access patterns.",
+    desc: "Efficient data models for relational and NoSQL databases.",
     points: [
-      "Schema design & indexing strategies",
-      "SQL & NoSQL trade-offs",
-      "Data integrity & migrations",
+      "Schema design",
+      "SQL/NoSQL trade-offs",
+      "Data integrity",
     ],
     icons: [
       <FaDatabase className="text-cyan-400" />,
@@ -95,14 +98,15 @@ const cards = [
       <SiMongodb className="text-green-500" />,
     ],
     gradient: "from-emerald-500 to-teal-500",
+    level: 88,
   },
   {
     title: "Low-Level System Design (LLD)",
-    desc: "Translate business requirements into clean, modular, and extensible class-level designs.",
+    desc: "Modular class-level designs with OOP principles.",
     points: [
-      "OOP principles & SOLID design",
-      "Design patterns (Factory, Strategy, Observer, etc.)",
-      "Clean code, modularity, testability",
+      "SOLID design",
+      "Design patterns",
+      "Clean code",
     ],
     icons: [
       <FaProjectDiagram className="text-indigo-400" />,
@@ -110,14 +114,15 @@ const cards = [
       <SiDotnet className="text-purple-500" />,
     ],
     gradient: "from-indigo-500 to-purple-500",
+    level: 92,
   },
   {
     title: "High-Level System Design (HLD)",
-    desc: "Design scalable, distributed systems by breaking problems into services and data flows.",
+    desc: "Scalable distributed systems and service architecture.",
     points: [
-      "Service decomposition & architecture",
-      "Scalability, availability, and reliability",
-      "Trade-offs: consistency vs availability",
+      "Service decomposition",
+      "Scalability & reliability",
+      "Consistency trade-offs",
     ],
     icons: [
       <FaProjectDiagram className="text-pink-400" />,
@@ -125,14 +130,15 @@ const cards = [
       <SiRedis className="text-red-400" />,
     ],
     gradient: "from-pink-500 to-rose-500",
+    level: 87,
   },
   {
     title: "AI / ML & Data",
-    desc: "Build intelligent solutions using machine learning and data-driven approaches.",
+    desc: "Intelligent solutions with machine learning.",
     points: [
-      "Supervised learning & model evaluation",
-      "Computer vision basics",
-      "Data preprocessing & feature engineering",
+      "Supervised learning",
+      "Computer vision",
+      "Data preprocessing",
     ],
     icons: [
       <FaBrain className="text-pink-500" />,
@@ -141,14 +147,15 @@ const cards = [
       <SiOpencv className="text-green-400" />,
     ],
     gradient: "from-fuchsia-500 to-pink-500",
+    level: 80,
   },
   {
     title: "Problem Solving & DSA",
-    desc: "Strong foundation in algorithms and data structures with consistent competitive programming practice.",
+    desc: "Strong algorithms and competitive programming foundation.",
     points: [
-      "Arrays, trees, graphs, DP, greedy",
-      "Time & space complexity analysis",
-      "1000+ problems solved",
+      "Arrays, graphs, DP",
+      "Complexity analysis",
+      "1000+ problems",
     ],
     icons: [
       <SiLeetcode className="text-yellow-400" />,
@@ -157,6 +164,7 @@ const cards = [
       <SiCodechef className="text-purple-400" />,
     ],
     gradient: "from-blue-500 to-cyan-500",
+    level: 95,
   },
 ];
 
