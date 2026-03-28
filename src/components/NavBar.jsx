@@ -1,13 +1,10 @@
-// src/components/NavBar.jsx
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React from "react";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
-  const [nav, setNav] = useState(false);
   const { darkMode, toggleTheme } = useTheme();
 
   const links = [
@@ -50,7 +47,7 @@ const NavBar = () => {
       </Link>
 
       {/* Desktop Nav */}
-      <ul className="hidden md:flex gap-6 lg:gap-8 items-center">
+      <ul className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 items-center">
         {links.map(({ id, link }) => (
           <motion.li
             key={id}
@@ -89,48 +86,6 @@ const NavBar = () => {
       >
         {darkMode ? <BsSun size={20} /> : <BsMoon size={20} />}
       </motion.button>
-
-      {/* Mobile Menu Icon */}
-      <div
-        onClick={() => setNav(!nav)}
-        className="md:hidden cursor-pointer text-gray-700 dark:text-gray-300"
-      >
-        {nav ? <FaTimes size={28} /> : <FaBars size={28} />}
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {nav && (
-          <motion.ul
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="
-              fixed inset-0 flex flex-col justify-center items-center
-              backdrop-blur-2xl bg-white/80 dark:bg-black/80
-              space-y-10 text-3xl font-bold
-            "
-          >
-            {links.map(({ id, link }) => (
-              <motion.li
-                key={id}
-                whileHover={{ scale: 1.2 }}
-                className="hover:text-cyan-400 dark:hover:text-pink-400"
-              >
-                <Link
-                  to={link}
-                  smooth
-                  duration={500}
-                  onClick={() => setNav(false)}
-                >
-                  {link}
-                </Link>
-              </motion.li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };
