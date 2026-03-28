@@ -20,6 +20,43 @@ html, body {
   @apply bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark transition-colors duration-300;
 }
 
+:root.bw .theme-section {
+  background-color: #000;
+  color: #f8f8f8;
+  filter: grayscale(100%) contrast(1.05);
+}
+
+:root.bw .theme-section * {
+  color: #f8f8f8 !important;
+}
+
+:root.bw .theme-section [class*='bg-'] {
+  background-image: none !important;
+  background-color: rgba(255,255,255,0.08) !important;
+}
+
+:root.bw .theme-section [class*='border-'] {
+  border-color: rgba(255,255,255,0.15) !important;
+}
+
+:root.bw .theme-section [class*='ring-'],
+:root.bw .theme-section [class*='shadow-'] {
+  box-shadow: 0 10px 30px rgba(255,255,255,0.08) !important;
+}
+
+:root.bw .theme-section a,
+:root.bw .theme-section button,
+:root.bw .theme-section span,
+:root.bw .theme-section p,
+:root.bw .theme-section h1,
+:root.bw .theme-section h2,
+:root.bw .theme-section h3,
+:root.bw .theme-section h4,
+:root.bw .theme-section h5,
+:root.bw .theme-section h6 {
+  color: #f8f8f8 !important;
+}
+
 
 /* ===============================
    FIRE TAIL CURSOR

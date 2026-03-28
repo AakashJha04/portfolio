@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
-  const { darkMode, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   const links = [
     { id: 1, link: "Home" },
@@ -82,9 +82,15 @@ const NavBar = () => {
           text-black dark:text-white
           hover:shadow-cyan-400/40 dark:hover:shadow-pink-400/40
         "
-        title="Toggle Theme"
+        title="Cycle Theme: Light → Dark → Black & White"
       >
-        {darkMode ? <BsSun size={20} /> : <BsMoon size={20} />}
+        {theme === "dark" ? (
+          <BsSun size={20} />
+        ) : theme === "bw" ? (
+          <span className="text-sm font-semibold">B&W</span>
+        ) : (
+          <BsMoon size={20} />
+        )}
       </motion.button>
     </nav>
   );
