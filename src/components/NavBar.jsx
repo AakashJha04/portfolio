@@ -46,8 +46,8 @@ const NavBar = () => {
         </motion.h1>
       </Link>
 
-      {/* Desktop Nav */}
-      <ul className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 items-center">
+      {/* Desktop Nav (hidden on mobile) */}
+      <ul className="hidden md:flex md:flex-row gap-6 lg:gap-8 items-center">
         {links.map(({ id, link }) => (
           <motion.li
             key={id}
